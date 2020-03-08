@@ -1,0 +1,43 @@
+<html>
+<head>
+<title>www.cricket/result.com</title>
+<script>
+function act(){
+let score1=localStorage.getItem("Score1");
+let score2=localStorage.getItem("Score2");
+let x=parseInt(score1);
+let y=parseInt(score2);
+if(x>y){let s=x-y;alert("TEAM A WON BY "+s+" RUNS");
+    document.getElementById("res").style="background-color:LightPink;";
+    document.getElementById("t").innerHTML="<h1>TEAM A WON BY </h1>" +"<h1>"+s+"</h1>"+"<h1> RUNS</h1>";
+}
+else if(x<y){let s=y-x;alert("TEAM B WON BY "+s+" RUNS");
+    document.getElementById("res").style="background-color:Cyan;";
+    document.getElementById("t").innerHTML ="<h1>TEAM B WON BY </h1>" +"<h1>"+s+"</h1>"+"<h1> RUNS</h1>";
+}
+else{alert("DRAW");
+    document.getElementById("res").style="background-color:Blue;";
+    document.getElementById("t").innerHTML = "<h1>DRAW</h1>";
+}}
+</script>
+<style>
+* {
+  box-sizing: border-box;
+}
+
+.column {
+  float: left;
+  width: 100%;
+  padding: 10px;
+  height: 200px;
+  text-align: center; 
+}
+</style>
+
+</head>
+<body >
+<input type="button" onClick="act()" class="column" id="res" value="RESULT">
+<div class="column" id="t"></div>
+</body>
+
+</html>

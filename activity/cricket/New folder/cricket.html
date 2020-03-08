@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>Click the button to display a random number between 1 and 6.</p>
+
+<button onclick="team1game()" id="team1">Try it</button>
+<button onclick="team2game()" id="team2">Try it</button>
+
+<p id="demo"></p>
+<p id="dem"></p>
+<script>
+class team {
+
+ constructor(a)
+ {
+ this.id=a;
+  this.score=0;
+  this.i=0;
+  this.x =0;
+  this.balls=36;
+  }
+
+  myFunction(){
+  if(this.i<=9){
+  this.x = Math.floor(Math.random() * 7 );
+  if(this.x == 0)
+  {
+  this.i+=1;
+  }
+  this.score+=parseInt(this.x);
+  this.balls-=1;
+  document.getElementById("demo").innerHTML= "score is:"+ this.score + "/" +  this.i+"    balls left:"+this.balls;
+  
+    
+  if(this.balls == 0)
+  {
+  document.getElementById("team"+this.id).disabled = true;
+  return this.score;
+  }
+  
+  }
+  }
+  
+  }
+var ss=new team('1');
+var tt=new team('2');
+function team1game(){
+ let s1=ss.myFunction();
+ if(s1!="undefined"){
+ localStorage.setItem("Score1",s1);
+  }
+ }
+ function team2game(){
+ let s2= tt.myFunction(); 
+ if(s2!="undefined"){localStorage.setItem("Score2",s2);}
+ } 
+ 
+ 
+
+</script>
+<div><h1 align="center"><a href="result.html"> SUBMIT </a></h1></div>
+
+</body>
+</html>

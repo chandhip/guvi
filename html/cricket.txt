@@ -1,0 +1,8 @@
+
+ if((team1.id.disabled==true) && (team2.id.disabled==true))
+ {
+ if(ss.score == tt.score) { document.getElementById("dem").innerHTML="Match Draw"; }
+ if(ss.score<tt.score)    {document.getElementById("dem").innerHTML="team2 win the match";}
+ if(ss.score>tt.score)    {document.getElementById("dem").innerHTML="team1 win the match";}}
+ 
+ }
